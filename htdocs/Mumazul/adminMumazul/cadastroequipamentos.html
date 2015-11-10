@@ -356,61 +356,172 @@
       </aside>
 
       <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Text Editors
-            <small>Advanced form element</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Forms</a></li>
-            <li class="active">Editors</li>
-          </ol>
-        </section>
+       
+  <div class='panel panel-primary dialog-panel'>
+      
+          
+    <div class='container'>
 
-        <!-- Main content -->
-        <section class="content">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="box box-info">
-                <div class="box-header">
-                  <h3 class="box-title">CK Editor <small>Advanced and full of features</small></h3>
-                  <!-- tools box -->
-                  <div class="pull-right box-tools">
-                    <button class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-                  </div><!-- /. tools -->
-                </div><!-- /.box-header -->
-                <div class="box-body pad">
-                  <form>
-                    <textarea id="editor1" name="editor1" rows="10" cols="80">
-                                            This is my textarea to be replaced with CKEditor.
-                    </textarea>
-                  </form>
-                </div>
-              </div><!-- /.box -->
-
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Bootstrap WYSIHTML5 <small>Simple and fast</small></h3>
-                  <!-- tools box -->
-                  <div class="pull-right box-tools">
-                    <button class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-default btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-                  </div><!-- /. tools -->
-                </div><!-- /.box-header -->
-                <div class="box-body pad">
-                  <form>
-                    <textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                  </form>
+    
+     
+       <div class='panel-body'>
+        <form class='form-horizontal' role='form'>
+          <div class='form-group'>
+          <CENTER>
+          <B>  <h2>              CADASTRO DE EQUIPAMENTOS </h2> </B>
+          </BR>
+          </br>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'> Tipo de Equipamento</label>
+            <div class='col-md-2'>
+              <select class='form-control' id='id_accomodation'>
+                <option>Mouse</option>
+                <option>HD - Hard Disk</option>
+                <option>Teclado</option>
+                 <option>Monitor</option>
+                  <option>Placa-mãe</option>
+                   <option>Processador</option>
+              </select>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Descrição do Equip.</label>
+            <div class='col-md-8'>
+             
+              <div class='col-md-3 indent-small'>
+                <div class='form-group internal'>
+                  <input class='form-control' id='id_first_name' placeholder='Que produto é? ' type='text'>
                 </div>
               </div>
-            </div><!-- /.col-->
-          </div><!-- ./row -->
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+             
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_adults'>Guests</label>
+            <div class='col-md-8'>
+              <div class='col-md-2'>
+                <div class='form-group internal'>
+                  <input class='form-control col-md-8' id='id_adults' placeholder='18+ years' type='number'>
+                </div>
+              </div>
+              <div class='col-md-3 indent-small'>
+                <div class='form-group internal'>
+                  <input class='form-control' id='id_children' placeholder='2-17 years' type='number'>
+                </div>
+              </div>
+              <div class='col-md-3 indent-small'>
+                <div class='form-group internal'>
+                  <input class='form-control' id='id_children_free' placeholder='&lt; 2 years' type='number'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_email'>Contact</label>
+            <div class='col-md-6'>
+              <div class='form-group'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='id_email' placeholder='E-mail' type='text'>
+                </div>
+              </div>
+              <div class='form-group internal'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='id_phone' placeholder='Phone: (xxx) - xxx xxxx' type='text'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_checkin'>Checkin</label>
+            <div class='col-md-8'>
+              <div class='col-md-3'>
+                <div class='form-group internal input-group'>
+                  <input class='form-control datepicker' id='id_checkin'>
+                  <span class='input-group-addon'>
+                    <i class='glyphicon glyphicon-calendar'></i>
+                  </span>
+                </div>
+              </div>
+              <label class='control-label col-md-2' for='id_checkout'>Checkout</label>
+              <div class='col-md-3'>
+                <div class='form-group internal input-group'>
+                  <input class='form-control datepicker' id='id_checkout'>
+                  <span class='input-group-addon'>
+                    <i class='glyphicon glyphicon-calendar'></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_equipment'>Equipment type</label>
+            <div class='col-md-8'>
+              <div class='col-md-3'>
+                <div class='form-group internal'>
+                  <select class='form-control' id='id_equipment'>
+                    <option>Travel trailer</option>
+                    <option>Fifth wheel</option>
+                    <option>RV/Motorhome</option>
+                    <option>Tent trailer</option>
+                    <option>Pickup camper</option>
+                    <option>Camper van</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-md-9'>
+                <div class='form-group internal'>
+                  <label class='control-label col-md-3' for='id_slide'>Slide-outs</label>
+                  <div class='make-switch' data-off-label='NO' data-on-label='YES' id='id_slide_switch'>
+                    <input id='id_slide' type='checkbox' value='chk_hydro'>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_service'>Required Service</label>
+            <div class='col-md-8'>
+              <select class='multiselect' id='id_service' multiple='multiple'>
+                <option value='hydro'>Hydro</option>
+                <option value='water'>Water</option>
+                <option value='sewer'>Sewer</option>
+              </select>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_pets'>Pets</label>
+            <div class='col-md-8'>
+              <div class='make-switch' data-off-label='NO' data-on-label='YES' id='id_pets_switch'>
+                <input id='id_pets' type='checkbox' value='chk_hydro'>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_comments'>Comments</label>
+            <div class='col-md-6'>
+              <textarea class='form-control' id='id_comments' placeholder='Additional comments' rows='3'></textarea>
+            </div>
+          </div>
+          <div class='form-group'>
+            <div class='col-md-offset-4 col-md-3'>
+              <button class='btn-lg btn-primary' type='submit'>Request Reservation</button>
+            </div>
+            <div class='col-md-3'>
+              <button class='btn-lg btn-danger' style='float:right' type='submit'>Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+      </div>
+
+</center>
+
+
+
+       
+
+      
+                
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.3.0
