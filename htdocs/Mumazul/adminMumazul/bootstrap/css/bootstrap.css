@@ -2603,7 +2603,7 @@ input[type="search"] {
   input[type="time"].form-control,
   input[type="datetime-local"].form-control,
   input[type="month"].form-control {
-    line-height: 34px;
+    line-height: 340px;
   }
   input[type="date"].input-sm,
   input[type="time"].input-sm,
@@ -2613,7 +2613,7 @@ input[type="search"] {
   .input-group-sm input[type="time"],
   .input-group-sm input[type="datetime-local"],
   .input-group-sm input[type="month"] {
-    line-height: 30px;
+    line-height: 300px;
   }
   input[type="date"].input-lg,
   input[type="time"].input-lg,
@@ -2718,7 +2718,7 @@ select[multiple].input-sm {
   height: auto;
 }
 .form-group-sm .form-control {
-  height: 30px;
+  height: 40px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
@@ -3884,7 +3884,7 @@ tbody.collapse.in {
 .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
-  height: 46px;
+  height: 400px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
