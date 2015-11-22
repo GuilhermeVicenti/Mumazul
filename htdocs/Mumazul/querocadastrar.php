@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php  
-include ('conexao.php');
+<?php 
     
+    include ('conexao.php');
+if (isset($_POST['cadastro']) AND $_POST['cadastro'] == 'empresa') {
 
-if (isset($_POST['login']) AND $_POST['login']  == 'empresa'){
+    if ($_POST['senha1_empresa'] == $_POST['senha2_empresa']) {
+    
+        $sql1 = 'SELECT  * FROM empresas WHERE cnpj_empresa =  "'.$_POST['cnpj_empresa'].'"';
 
-    $_POST['nome_usuario'] = isset($_POST['nome_usuario']) ? $_POST['nome_usuario'] : '';
-    $_POST['senha_usuario'] = isset($_POST['senha_usuario']) ? $_POST['senha_usuario'] : '';
-
-    if ($_POST['nome_usuario'] != '' AND $_POST['senha_usuario'] != '' ) {
-
-        session_start();
-
-        $log = 'SELECT * 
-                  FROM empresas
-                 WHERE usuario_empresa = "'.$_POST['nome_usuario'].'" 
-                   AND senha_empresa = "'.$_POST['senha_usuario'].'"';
-
-        $res = mysqli_query($link, $log);
-
+        $var = mysqli_query($link , $sql1);
        
+        if (mysqli_fetch_array($var)) {
 
-        if ($row = mysqli_fetch_array($res)) {
-             
-            $_SESSION['empresa'] = $row['nome_empresa']; 
-            $_SESSION['setor'] = 'adm' ; 
-            $_SESSION['cod_user'] = $row['cod_empresa']; 
+            echo '<script> alert("Empresa já cadastrada!!") </script>';
 
-            header("Location: http://localhost/Mumazul/adminMumazul/index2.php"); 
+        }else{
 
-                   echo $log;
-             
-
-
+            $sql = 'INSERT INTO
+                      `empresas`(                
+                        `nome_empresa`,
+                        `rua_empresa`,
+                        `bairro_empresa`,
+                        `cidade_empresa`,
+                        `telefone_empresa`,
+                        `email_empresa`,
+                        `cnpj_empresa`,
+                        `usuario_empresa`,
+                        `senha_empresa`
+                      )
+                    VALUES(              
+                      "'.$_POST['nome_empresa'].'",
+                      "'.$_POST['rua_empresa'].'",
+                      "'.$_POST['bairro_empresa'].'",
+                      "'.$_POST['cidade_empresa'].'",
+                      "'.$_POST['telefone_empresa'].'",
+                      "'.$_POST['email_empresa'].'",
+                      "'.$_POST['cnpj_empresa'].'",
+                      "'.$_POST['user_empresa'].'",
+                      "'.$_POST['senha1_empresa'].'"
+                    )';              
+            echo '<script> alert("Empresa Cadastrada com Sucesso!") </script>';                                           
         }
-
-
-
         
-    } else{
+       //echo   mysqli_query($link , $sql);
+          
+    }else {
 
-
+                    echo '<script> alert("As senhas não coincidem!!") </script>';
 
     }
 
 }
 
 
-?>
-
+ ?>
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MuMaZul</title>
+    <title>VEM PRO MUMA :)</title>
+    <script src="jquery-1.2.6.pack.js" type="text/javascript"></script><script src="jquery.maskedinput-1.1.4.pack.js" type="text/javascript" /></script>
+    <script type="text/javascript">$(document).ready(function(){    $("#cnpj").mask("99.999.999/9999-99");});</script> 
     <link rel="shortcut icon" href="img/favicon.png" />
     <link href='http://fonts.googleapis.com/css?family=Hind:400,300,600,500,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -74,6 +80,7 @@ if (isset($_POST['login']) AND $_POST['login']  == 'empresa'){
 </head>
 
 <body>
+    
 
       <!-- Top Bar-->
     <div class="top">
@@ -109,7 +116,7 @@ if (isset($_POST['login']) AND $_POST['login']  == 'empresa'){
                                 </li>
                             </ul>
                         </li>
-                        <li class="current"><a href="login.html">Login</a>
+                        <li class="current"><a href="login.php">Login</a>
                             
                                 </li>
                                
@@ -133,7 +140,7 @@ if (isset($_POST['login']) AND $_POST['login']  == 'empresa'){
                     <li>Aonde eu estou? </li>
                     <li><a href="index.php">Início</a>
                     </li>
-                    
+                         
                     </li>
                     <li class="active">Login</li>
                 </ol>
@@ -148,26 +155,44 @@ if (isset($_POST['login']) AND $_POST['login']  == 'empresa'){
         <div class="row spacing-40">
             <div class="col-sm-12">
                 <div class="login-form-panel">
-                    <h3 class="badge">--LOGIN--</h3>
+                    <h3 class="badge">CADASTRE A SUA EMPRESA</h3>
+
+
                     <div class="row">
                         <div class="col-sm-5 center-block">
                             <div class="login-form">
                                 <form method="post" action="#">
-                                    <input type="text" name="nome_usuario" size="50" placeholder="Digite aqui o e-mail cadastrado!" />
-                                     <input type="password" name="senha_usuario" size="20" placeholder="Digite sua senha!" />
-                                    <!--<p class="text-center"><a href="">--ESQUECEU A SENHA NÉ?!--</a>
-                                    </p>-->
-                                    <input type="hidden" value="empresa" name="login">
-                                    <input type="submit" value="Entrar">
-                                    
-                                      <div class="form-group"> <a href="querocadastrar.php"> <u>Ei, Quero me CADASTRAR!</u></a></div>
-                                    
+                                    <input type="text" name="nome_empresa" size="50" placeholder="Digite o nome da  sua EMPRESA" />
+                                    <input class='form-control' name='rua_empresa' placeholder='Rua da Empresa' type='text'>
+                                    <input class='form-control' name='bairro_empresa' placeholder='Bairro Empresa' type='text'>
+                                        <select class='form-control' name='cidade_empresa' placeholder='Cidade Empresa' type='text'>                          
+                                       
+                                             
+                                                <option value="Rio dos Cedros">Rio dos Cedros</option>
+                                                <option value="Blumenau">Blumenau</option>
+                                                <option value="Indaial">Indaial</option>
+                                                <option value="Rodeio">Rodeio</option>
+                                                <option value="Benedito Novo">Benedito Novo</option>
+                                                <option value="Timbó ">Timbó</option>
+                                                <option value="Ascurra">Ascurra</option>
+                                                <option value="Pomerode">Pomerode</option>
+                                                 
 
+                                        </select> 
+
+                                    <input class='form-control' name='telefone_empresa' placeholder='Telefone Empresa' type='text'>
+                                    <input class='form-control' name='email_empresa' placeholder='E-mail da Empresa' type='text'>
+                                    <input class='form-control' name='cnpj_empresa' placeholder='CNPJ da Empresa' type='text'>
+                                    <input class='form-control' name='user_empresa' placeholder='Usuário Para Login no Mumazul (LOGIN)' type='text'>
+                                    <input class='form-control' name='senha1_empresa' placeholder='Senha da Empresa' type='password'>
+                                    <input class='form-control' name='senha2_empresa' placeholder='Confirmação de Senha' type='password'>
+                                    <input type="hidden" value="empresa" name="cadastro">
+ 
+                                    <input type="submit" value="CADASTRAR EMPRESA" />
 
                                 </form>
 								
                             </div>
-							
 							
                         </div>
                     </div>
