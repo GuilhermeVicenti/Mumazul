@@ -34,7 +34,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="index2.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><img src="../img/white-elephant.png"></span>
           <!-- logo for regular state and mobile devices -->
@@ -175,7 +175,7 @@
           <ul class="sidebar-menu">
             <li class="header">Opções de Administrador</li>
             <li class="active treeview">
-              <a href="index2.html">
+              <a href="index2.php">
                 <i class="fa fa-fw fa-bars"></i>
                 </span> <span>Menus</span></span> </i>
               </a>          
@@ -187,10 +187,10 @@
                  <i class="fa fa-angle-left pull-right"></i>             
               </a>
               <ul class="treeview-menu">
-                <li><a href="cadastrofuncionarios.html"><i class="fa fa-circle-o"></i> Funcionários </a></li>
-                <li><a href="cadastroequipamentos.html"><i class="fa fa-circle-o"></i> Equipamentos </a></li>
-                <li><a href="cadastroconjunto.html"><i class="fa fa-circle-o"></i> Conjuntos </a></li>
-                <li><a href="cadastrofornecedores.html"><i class="fa fa-circle-o"></i> Fornecedores </a></li>
+                <li><a href="cadastrofuncionarios.php"><i class="fa fa-circle-o"></i> Funcionários </a></li>
+                <li><a href="cadastroequipamentos.php"><i class="fa fa-circle-o"></i> Equipamentos </a></li>
+                <li><a href="cadastroconjunto.php"><i class="fa fa-circle-o"></i> Conjuntos </a></li>
+                <li><a href="cadastrofornecedores.php"><i class="fa fa-circle-o"></i> Fornecedores </a></li>
               
                
               </ul>
@@ -203,11 +203,11 @@
                
               </a>
               <ul class="treeview-menu">
-                <li><a href="relatoriomensal.html"><i class="fa fa-circle-o"></i> Relatórios Mensais </a></li>
-                <li><a href="relatoriosemanal.html"><i class="fa fa-circle-o"></i> Relatorio Semanal </a></li>
-                <li><a href="relatoriosetor.html"><i class="fa fa-circle-o"></i> Relatório Setor</a></li>
-                <li><a href="relatoriousuario.html"><i class="fa fa-circle-o"></i> Relatório Usuário</a></li>
-                <li><a href="relatoriousuario.html"><i class="fa fa-circle-o"></i> Relatório de Chamados  </a></li>
+                <li><a href="relatoriomensal.php"><i class="fa fa-circle-o"></i> Relatórios Mensais </a></li>
+                <li><a href="relatoriosemanal.php"><i class="fa fa-circle-o"></i> Relatorio Semanal </a></li>
+                <li><a href="relatoriosetor.php"><i class="fa fa-circle-o"></i> Relatório Setor</a></li>
+                <li><a href="relatoriousuario.php"><i class="fa fa-circle-o"></i> Relatório Usuário</a></li>
+                <li><a href="relatoriousuario.php"><i class="fa fa-circle-o"></i> Relatório de Chamados  </a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -217,8 +217,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="chamadospendentes.html"><i class="fa fa-circle-o"></i> Chamados Pendentes</a></li>
-                <li><a href="chamadosatendidos.html"><i class="fa fa-circle-o"></i> Chamados Atendidos</a></li>
+                <li><a href="chamadospendentes.php"><i class="fa fa-circle-o"></i> Chamados Pendentes</a></li>
+                <li><a href="chamadosatendidos.php"><i class="fa fa-circle-o"></i> Chamados Atendidos</a></li>
                
               </ul>
             </li>

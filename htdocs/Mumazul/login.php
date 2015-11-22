@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MuMaZul</title>
-    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="shortcut icon" href="img/favicon.png" />
     <link href='http://fonts.googleapis.com/css?family=Hind:400,300,600,500,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="logo">
-                    <a href="index.php"><img src="logomarca.png" alt=""><b>O Mumazul</b>
+                    <a href="index.php"><img src="img/logomarca.png" alt=""><b>O Mumazul</b>
                     </a>
                 </div>
             </div>

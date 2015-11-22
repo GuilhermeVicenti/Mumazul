@@ -34,7 +34,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="index2.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><img src="../img/white-elephant.png"></span>
           <!-- logo for regular state and mobile devices -->
@@ -200,7 +200,7 @@
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
+        <s*-/*9ection class="sidebar">
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
@@ -225,7 +225,7 @@
           <ul class="sidebar-menu">
             <li class="header">Opções de Administrador</li>
             <li class="active treeview">
-              <a href="index2.html">
+              <a href="index2.php">
                 </span> <span>Menus</span></span> </i>
               </a>          
             </li>
@@ -345,7 +345,7 @@
                 <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
               </ul>
             </li>
-            <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+            <li><a href="documentation/index.php"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
@@ -371,40 +371,32 @@
         <form class='form-horizontal' role='form'>
           <div class='form-group'>
           <CENTER>
-          <B>  <h2>              CADASTRO DE EQUIPAMENTOS </h2> </B>
+          <B>  <h2>              CADASTRO DE FUNCIONÁRIOS </h2> </B>
           </BR>
           </br>
-            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'> Tipo de Equipamento</label>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'> Qual o nome do Funcionário?</label>
             <div class='col-md-2'>
-              <select class='form-control' id='id_accomodation'>
-                <option>Mouse</option>
-                <option>HD - Hard Disk</option>
-                <option>Teclado</option>
-                 <option>Monitor</option>
-                  <option>Placa-mãe</option>
-                   <option>Processador</option>
-              </select>
+              <input class='form-control' id='nome_funcionario' placeholder='Digite aqui o nome do funcionário' style="width:420px; " type='text'>
             </div>
           </div>
           <div class='form-group'>
-            <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Descrição do Equip.</label>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Este Usuário é --></label>
             <div class='col-md-8'>
+               <select class='form-control' id='tipo_usuario' style="width:210px;" >
+                <option> Administrador </option>
+                <option>  Funcionário Comum </option>
+              </select>
              
-              <div class='col-md-3 indent-small'>
-                <div class='form-group internal'>
-                  <input class='form-control' id='id_first_name' placeholder='Que produto é?' style="width:420px; " type='text'>
-                </div>
-              </div>
-             
-                 
-            </div>
+              <div class='col-md-3 indent-small'>              
+              </div>         
+          </div>
           </div>
           <div class='form-group'>
-            <label class='control-label col-md-2 col-md-offset-2' for='id_adults'>Data de Compra</label>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_adults'>Data de contratação</label>
             <div class='col-md-8'>
               <div class='col-md-2'>
                 <div class='form-group internal'>
-                  <input class='form-control col-mg-8' id='data_compra' style="width:160px;"  type='date' max="31-12-2099"  >
+                  <input class='form-control col-mg-8' id='data_contratacao' style="width:160px;"  type='date' max="31-12-2099"  >
                 </div>
               </div>
               
@@ -412,54 +404,110 @@
             </div>
           </div>
           <div class='form-group'>
-            <label class='control-label col-md-2 col-md-offset-2' for='id_fornecedor'>Fornecedor</label>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_fornecedor'>Turno do funcionário</label>
             <div class='col-md-6'>
               <div class='form-group'>
                 <div class='col-md-11'>
-                  <input class='form-control' id='id_fornecedor'  style="width:210px"   placeholder='Quem fornece  este produto?' type='text'>
-                     <a href=""> Busque o fornecedor!</a>
+                   <select class='form-control' id='tipo_usuario' style="width:210px;" >
+                <option> 05:00 às 13:48 </option>
+                <option>  07:15 às 17:15 </option>
+              </select>
+                     
                 </div>
               </div>
             </div>
 
-            	 <div class='form-group'>
-            <label class='control-label col-md-2 col-md-offset-2' for='id_fornecedor'>Preço do Produto</label>
+            <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_fornecedor'>Nome de Usuário</label>
             <div class='col-md-6'>
               <div class='form-group'>
                 <div class='col-md-11'>
-                  <input class='form-control' id='id_fornecedor'  style="width:210px"   placeholder='Quanto você pagou por isso?' type='text'>
+                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='nome de Usuário do dominio empresarial' type='text'>
                 </div>
               </div>
             </div>
-
-
-
-            </div>
+             <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Setor do usuário</label>
+            <div class='col-md-8'>
+               <select class='form-control' id='tipo_usuario' style="width:210px;" >
+                <option> == </option>
+               
+              </select>
+             
+              <div class='col-md-3 indent-small'>              
+              </div>         
           </div>
+          </div>
+
+
+         
+            
           <div class='form-group'>
-            <label class='control-label col-md-2 col-md-offset-2' for='id_checkin'>Marca do Equipamento</label>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_checkin'>Senha do usuário</label>
             <div class='col-md-8'>
               <div class='col-md-3'>
                 <div class='form-group internal input-group'>
-                  <input class='form-control datepicker' placeholder=" Qual a marca?" id='id_checkin'>
-                  
-                  </span>
+                  <input class='form-control datepicker' placeholder="Digite a senha do Usuario" id='id_checkin'>
+                  (Útilize  preferenciamente NUMEROS  e LETRAS. Ex "ppcp0541")
+                 
                 </div>
-              </div>
-              
+              </div>              
             </div>
           </div>
+
+
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_fornecedor'>E-mail do funcionário</label>
+            <div class='col-md-6'>
+              <div class='form-group'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='Digite o e-mail do funcionário' type='text'>
+                </div>
+              </div>
+            </div>
           
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_fornecedor'>Senha de E-mail</label>
+            <div class='col-md-6'>
+              <div class='form-group'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='nome de Usuário do dominio empresarial' type='text'>
+                </div>
+              </div>
+            </div>
+
+            <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_fornecedor'>Usuário Skype</label>
+            <div class='col-md-6'>
+              <div class='form-group'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='Qual nome do usuário do Skype' type='text'>
+                </div>
+              </div>
+            </div>
+
+            <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_fornecedor'>Senha do Skype</label>
+            <div class='col-md-6'>
+              <div class='form-group'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='Senha do Skype' type='text'>
+                </div>
+              </div>
+            </div>
+
+
+
         
           <div class='form-group'>
-            <label class='control-label col-md-2 col-md-offset-2' for='id_comments'>Observações e comentários sobre o equipamento</label>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_comments'>Informações do Usuário </label>
             <div class='col-md-6'>
-              <textarea class='form-control' id='id_comments' placeholder='Comentários sobre o equipamento' rows='3'></textarea>
+              <textarea class='form-control' id='id_comments' placeholder='Comentários do Funcionário' rows='3'></textarea>
             </div>
           </div>
           <div class='form-group'>
             <div class='col-md-offset-4 col-md-3'>
-              <button class='btn-lg btn-primary' type='submit'>Cadastrar equipamento</button>
+              <button class='btn-lg btn-primary' type='submit'>Cadastrar Funcionário</button>
             </div>
             <div class='col-md-3'>
               <button class='btn-lg btn-danger' style='float:right' type='submit'>Cancelar cadastro</button>
