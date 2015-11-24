@@ -1,4 +1,77 @@
 <!DOCTYPE html>
+
+ <html lang="pt-br">
+
+<?php  
+
+    include ('../conexao.php');
+
+if (isset($_POST['cadastro']) AND $_POST['cadastro'] == 'empresa') {
+
+    if ($_POST['senha1_empresa'] == $_POST['senha2_empresa']) {
+    
+        $sql1 = 'SELECT  * FROM empresas WHERE cnpj_empresa =  "'.$_POST['cnpj_empresa'].'"';
+
+        $var = mysqli_query($link , $sql1);
+       
+        if (mysqli_fetch_array($var)) {
+
+            echo '<script> alert("Empresa já cadastrada!!") </script>';
+
+        }else{
+
+            $sql = 'INSERT INTO
+                      `empresas`(                
+                        `nome_empresa`,
+                        `rua_empresa`,
+                        `bairro_empresa`,
+                        `cidade_empresa`,
+                        `telefone_empresa`,
+                        `email_empresa`,
+                        `cnpj_empresa`,
+                        `usuario_empresa`,
+                        `senha_empresa`
+                      )
+                    VALUES(              
+                      "'.$_POST['nome_empresa'].'",
+                      "'.$_POST['rua_empresa'].'",
+                      "'.$_POST['bairro_empresa'].'",
+                      "'.$_POST['cidade_empresa'].'",
+                      "'.$_POST['telefone_empresa'].'",
+                      "'.$_POST['email_empresa'].'",
+                      "'.$_POST['cnpj_empresa'].'",
+                      "'.$_POST['user_empresa'].'",
+                      "'.$_POST['senha1_empresa'].'"
+                    )';              
+            echo '<script> alert("Empresa Cadastrada com Sucesso!") </script>';                                           
+        }
+        
+       //echo   mysqli_query($link , $sql);
+          
+    }else {
+
+                    echo '<script> alert("As senhas não coincidem!!") </script>';
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
+
 <html>
   <head>
     <meta charset="utf-8">
