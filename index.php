@@ -230,7 +230,7 @@
                         <li>Localização de Equipamentos</li>
                         <li>Relatórios Mensais por setor</li>
                         <li>Controle de Manutenções</li>
-                        <li>Dados ilimitados </li>
+                        <li>Dados ilimitados</li>
                         <li>Suporte 24/7</li>
                     </ul>
                     <div class="panel-footer">
@@ -252,12 +252,12 @@
                         <span class="per">Mensais</span>
                     </div>
                     <ul class="text-center">
-                        <li>Personal use</li>
-                        <li>Unlimited projects</li>
-                        <li>24/7 support</li>
-                        <li>Personal use</li>
-                        <li>Unlimited projects</li>
-                        <li>24/7 support</li>
+                        <li>Cadastro de Salas</li>
+                        <li>Equipamentos em salas</li>
+                        <li>Controle de gastos</li>
+                        <li>Localização dos itens</li>
+                        <li>Cadasto de Manutenções</li>
+                        <li>Suporte 12/5</li>
                     </ul>
                     <div class="panel-footer">
                         <a class="btn btn-lg btn-pricetable" href="servicos2.html">Mais detalhes do Plano!</a>
@@ -273,55 +273,7 @@
 
    
 
-    <div class="testimonials gray">
-        <div class="row">
-            <div class="col-sm-12">
-                <h3>What Clients Think</h3>
-                <p>Foundation, Jane Addams John Lennon local solutions institutions action.</p>
-
-                <div id="testimonials-carousel" class="owl-carousel">
-
-                    <div class="item">
-                        <div class="testimonial-content">
-                            <div class="testimonialimg"><img src="images/testimonial1.jpg" alt="" />
-                            </div>
-                            <p>Future social movement carbon emissions reductions voice; foster reduce child mortality measures theory of social change emergent women and children. Life-expectancy gender rights safeguards save lives social analysis dignity health developing nations. </p>
-                            <div class="whoclient">
-                                <h5>Alvaro DeMichelis, Founder of <a href="">Global Corp.</a></h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="testimonial-content">
-                            <div class="testimonialimg"><img src="images/testimonial2.jpg" alt="" />
-                            </div>
-                            <p>International tackle working alongside. Economic security, significant invest, Ford Foundation respect public service crowdsourcing research affordable health. Philanthropy equal opportunity assessment expert accelerate United Nations environmental, poverty, political, public.</p>
-                            <div class="whoclient">
-                                <h5>Bjorn Swift, CEO of <a href="">Campaign Ltd.</a></h5>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="item">
-                        <div class="testimonial-content">
-                            <div class="testimonialimg"><img src="images/testimonial3.jpg" alt="" />
-                            </div>
-                            <p>Save the world citizens of change; medicine immunize, convener design thinking global network Kickstarter empowerment prevention effectiveness. Service improving quality youth incubation foster. Expanding community ownership, urban experience in the field scalable</p>
-                            <div class="whoclient">
-                                <h5>Bill Good, Chairman of <a href="">Solution S.A.</a></h5>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
+   
 
 
     <!--  Footer -->
