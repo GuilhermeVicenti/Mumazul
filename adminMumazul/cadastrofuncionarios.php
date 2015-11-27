@@ -436,9 +436,7 @@ if (isset($_POST['cadastro']) AND $_POST['cadastro'] == 'empresa') {
   <div class='panel panel-primary dialog-panel'>
       
           
-    <div class='container'>
-
-    
+    <div class='container'>    
      
        <div class='panel-body'>
         <form class='form-horizontal' role='form'>
@@ -589,6 +587,7 @@ if (isset($_POST['cadastro']) AND $_POST['cadastro'] == 'empresa') {
         </form>
       </div>
     </div>
+  </div>
     <br>
     <br>
     <br>

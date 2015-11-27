@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+
+<?php 
+        session_start();
+
+
+
+        if (!isset($_SESSION['cod_user'])) {
+          header('location: ../login.php');
+        }
+
+    
+
+
+
+
+ ?>
+
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -120,14 +138,14 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="../img/favicon.png" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"><?php  echo $_SESSION['empresa'] ?> </span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="../img/favicon.png" class="img-circle" alt="User Image">
+                    
                     <p>
-                     NOME DO USUÁRIO LOGADO - "Cargo do Usuário  - Setor"
+                     <?php  echo $_SESSION['empresa'] ?>
                      
                     </p>
                   </li>
@@ -137,7 +155,7 @@
                   <li class="user-footer">
                     <div class="pull-right">
                       <!--  DESLOGAR USUÁRIO -->
-                      <a href="#" class="btn btn-default btn-flat">Deslogar </a>
+                      <a href="../login.php?logout=logout" class="btn btn-default btn-flat"> Deslogar </a>
                     </div>
                   </li>
                 </ul>
@@ -158,7 +176,7 @@
             </div>
             <div class="pull-left info">
               <!-- COLOCAR NOME DO USUÁRIO -->
-              <p> Nome do Usuário </p>
+              <p> <?php  echo $_SESSION['empresa'] ?> </p>
             </div>
           </div>
           <!-- search form -->
@@ -269,7 +287,7 @@
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         
-
+qweqweeqw
         
       </div><!-- /.content-wrapper -->
 

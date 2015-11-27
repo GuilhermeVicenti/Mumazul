@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="logo">
-                    <a href="index.html"><img src="img/logomarca.png" alt=""><b>O Mumazul</b>
+                    <a href="index.php"><img src="img/logomarca.png" alt=""><b>O Mumazul</b>
                     </a>
                 </div>
             </div>

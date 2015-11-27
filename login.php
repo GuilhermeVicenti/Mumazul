@@ -2,6 +2,14 @@
 <html lang="pt-br">
 <?php  
 include ('conexao.php');
+
+        session_start();
+
+if (isset($_GET['logout']) AND $_GET['logout'] == 'logout' ) {
+    
+    unset($_SESSION);
+
+}
     
 
 if (isset($_POST['login']) AND $_POST['login']  == 'empresa'){
@@ -11,7 +19,6 @@ if (isset($_POST['login']) AND $_POST['login']  == 'empresa'){
 
     if ($_POST['nome_usuario'] != '' AND $_POST['senha_usuario'] != '' ) {
 
-        session_start();
 
         $log = 'SELECT * 
                   FROM empresas
@@ -27,11 +34,9 @@ if (isset($_POST['login']) AND $_POST['login']  == 'empresa'){
             $_SESSION['empresa'] = $row['nome_empresa']; 
             $_SESSION['setor'] = 'adm' ; 
             $_SESSION['cod_user'] = $row['cod_empresa']; 
+            $_SESSION['cod_empresa'] = $row['cod_empresa']; 
 
-            header("Location: http://localhost/Mumazul/adminMumazul/index2.php"); 
-
-                   echo $log;
-             
+            header("Location: http://localhost/Mumazul/adminMumazul/index.php");              
 
 
         }

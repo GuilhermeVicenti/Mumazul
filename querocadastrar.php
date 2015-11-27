@@ -6,8 +6,9 @@
 if (isset($_POST['cadastro']) AND $_POST['cadastro'] == 'empresa') {
 
     if ($_POST['senha1_empresa'] == $_POST['senha2_empresa']) {
+
     
-        $sql1 = 'SELECT  * FROM empresas WHERE cnpj_empresa =  "'.$_POST['cnpj_empresa'].'"';
+        $sql1 = 'SELECT * FROM empresas WHERE cnpj_empresa =  "'.$_POST['cnpj_empresa'].'"';
 
         $var = mysqli_query($link , $sql1);
        
@@ -43,7 +44,7 @@ if (isset($_POST['cadastro']) AND $_POST['cadastro'] == 'empresa') {
             echo '<script> alert("Empresa Cadastrada com Sucesso!") </script>';                                           
         }
         
-       //echo   mysqli_query($link , $sql);
+        mysqli_query($link , $sql);
           
     }else {
 
