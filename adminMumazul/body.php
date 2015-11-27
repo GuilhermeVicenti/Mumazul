@@ -355,6 +355,143 @@ class body {
 
 
 		function func(){
+ 				include('conexao.php');
+
+ 				if ($_POST['nome_funcionario'] == '' ) {
+						
+						$erro = ' Nome do Funcionário  está vazio! \n';
+					}
+
+					if ($_POST['tipo_usuario'] == '' ) {
+						
+						$erro .= ' Selecionar tipo de USUÁRIO!  \n';
+					}
+
+					if ($_POST['setor_usuario'] == '' ) {
+						
+						$erro .= ' Setor do USUÁRIO está vazio!  \n';
+					}
+
+
+					if ($_POST['turno_user'] == '' ) {
+						
+						$erro .= ' O TURNO está vazio!  \n';
+					}
+
+					if ($_POST['email_funcionario'] == '' ) {
+						
+						$erro .= ' O  EMAIL do Funcionário está vazio!  \n';
+					}
+
+							// VERIFICAR A SENHA DUAS VEZES!!!
+					if ($_POST['senha_email_funcionario'] == '' ) {
+						
+						$erro .= ' A Senha do USUARIO está vazia!  \n';
+					}
+
+					if ($_POST['nome_user_dominio'] == '' ) {
+						
+						$erro .= 'O nome do USER está vazio!  \n';
+					}
+
+					if ($_POST['senha_user_dominio'] == '' ) {
+						
+						$erro .= ' A senha do usuário do DOMINIO está vazia!  \n';
+
+
+					if ($_POST['data_contratacao'] == '' ) {
+						
+						$erro .= 'Coloque a DATA da contratação!  \n';
+
+					if ($_POST['nome_skype_funcionario'] == '' ) {
+						
+						$erro .= ' NOME do Usuário do SKYPE está VAZIO!  \n';
+
+
+					if ($_POST['senha_skype_funcionario'] == '' ) {
+						
+						$erro .= ' Senha do USUARIO do  SKYPE está VAZIA!  \n';
+
+
+
+
+
+
+
+
+
+
+ 				if ($erro) {
+						
+						echo   '<script> alert("'.$erro.'") </script>';
+
+
+
+ 				$sql = 
+ 				 	'INSERT
+								INTO
+								  `funcionarios`(								    
+								    `nome_funcionario`,
+								    `adm_funcionario`,
+								    `Empresas_cod_empresa`,
+								    `setores_cod_setor`,
+								    `Turno Funcionário`,
+								    `email_funcionario`,
+								    `senha_email`,
+								    `nome_dominio`,
+								    `senha_dominio`,
+								    `data_contratacao`,
+								    `nome_skype`,
+								    `senha_skype`
+								  )
+								VALUES(
+								  "'.$_POST['nome_funcionario'].'",
+								  "'.$_POST['tipo_usuario'].'",
+								  "'.$_SESSION['cod_empresa'].'",
+								  "'.$_POST['setor_usuario'].'",
+								  "'.$_POST['turno_user'].'",
+								  "'.$_POST['email_funcionario'].'",
+								   "'.$_POST['senha_email_funcionario'].'",
+								  "'.$_POST['nome_user_dominio'].'",
+								 "'.$_POST['senha_user_dominio'].'",
+								  "'.$_POST['data_contratacao'].'",
+								  "'.$_POST['nome_skype_funcionario'].'",
+								  "'.$_POST['senha_skype_funcionario'].'", '
+								)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			?>
 
@@ -366,15 +503,15 @@ class body {
 	          </br>
 	            <label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'> Qual o nome do Funcionário?</label>
 	            <div class='col-md-2'>
-	              <input class='form-control' id='nome_funcionario' placeholder='Digite aqui o nome do funcionário' style="width:420px; " type='text'>
+	              <input class='form-control' name='nome_funcionario' placeholder='Digite aqui o nome do funcionário' style="width:420px; " type='text'>
 	            </div>
 	          </div>
 	          <div class='form-group'>
 	            <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Este Usuário é --></label>
 	            <div class='col-md-8'>
-	               <select class='form-control' id='tipo_usuario' style="width:210px;" >
-	                <option> Administrador </option>
-	                <option>  Funcionário Comum </option>
+	               <select class='form-control' name='tipo_usuario' style="width:210px;" >
+	                <option value="Admin"> Administrador </option>
+	                <option  value="Comum"> Funcionário Comum </option>
 	              </select>
 	             
 	              <div class='col-md-3 indent-small'>              
@@ -386,7 +523,7 @@ class body {
 	            <div class='col-md-8'>
 	              <div class='col-md-2'>
 	                <div class='form-group internal'>
-	                  <input class='form-control col-mg-8' id='data_contratacao' style="width:160px;"  type='date' max="31-12-2099"  >
+	                  <input class='form-control col-mg-8' name='data_contratacao' style="width:160px;"  type='date' max="31-12-2099"  >
 	                </div>
 	              </div>
 	              
@@ -398,9 +535,9 @@ class body {
 	            <div class='col-md-6'>
 	              <div class='form-group'>
 	                <div class='col-md-11'>
-	                   <select class='form-control' id='tipo_usuario' style="width:210px;" >
-	                <option> 05:00 às 13:48 </option>
-	                <option>  07:15 às 17:15 </option>
+	                   <select class='form-control' name='turno_user' style="width:210px;" >
+	                <option value="1"> 05:00 às 13:48 </option>
+	                <option value= "2">  07:15 às 17:15 </option>
 	              </select>
 	                     
 	                </div>
@@ -412,15 +549,42 @@ class body {
 	            <div class='col-md-6'>
 	              <div class='form-group'>
 	                <div class='col-md-11'>
-	                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='nome de Usuário do dominio empresarial' type='text'>
+	                  <input class='form-control' name='nome_user_dominio'  style="width:410px"   placeholder='nome de Usuário do dominio empresarial' type='text'>
 	                </div>
 	              </div>
 	            </div>
 	             <div class='form-group'>
 	            <label class='control-label col-md-2 col-md-offset-2' for='id_title'>Setor do usuário</label>
 	            <div class='col-md-8'>
-	               <select class='form-control' id='tipo_usuario' style="width:210px;" >
-	                <option> == </option>
+	               <select class='form-control' name='setor_usuario' style="width:210px;" >
+	                <option value=""> == </option>
+
+	                <?php 
+
+	                	$sql1 = 'SELECT * FROM setores';
+	                	$var2 = mysqli_query($link, $sql1);
+
+
+	                	var_dump($sql1);
+
+	                	while ($var3 = mysqli_fetch_array($var2) ) {
+
+	                			echo  '<option value="'.$var3['cod_setor'] .'" >'.$var3['nome_setor'].'</option>' ;
+
+	                	}
+
+
+
+	                 ?>
+
+
+
+
+
+
+
+
+
 	               
 	              </select>
 	             
@@ -433,12 +597,12 @@ class body {
 	         
 	            
 	          <div class='form-group'>
-	            <label class='control-label col-md-2 col-md-offset-2' for='id_checkin'>Senha do usuário</label>
+	            <label class='control-label col-md-2 col-md-offset-2' for='id_checkin'>  Senha do usuário</label>
 	            <div class='col-md-8'>
 	              <div class='col-md-3'>
 	                <div class='form-group internal input-group'>
-	                  <input class='form-control datepicker' placeholder="Digite a senha do Usuario" id='id_checkin'>
-	                  (Útilize  preferenciamente NUMEROS  e LETRAS. Ex "ppcp0541")
+	                  <input class='form-control datepicker' placeholder="Digite a senha do Usuario" name='senha_user_dominio'>
+	                  	(Útilize  preferenciamente NUMEROS  e LETRAS. Ex "ppcp0541")
 	                 
 	                </div>
 	              </div>              
@@ -451,7 +615,7 @@ class body {
 	            <div class='col-md-6'>
 	              <div class='form-group'>
 	                <div class='col-md-11'>
-	                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='Digite o e-mail do funcionário' type='text'>
+	                  <input class='form-control' name='email_funcionario'  style="width:410px"   placeholder='Digite o e-mail do funcionário' type='text'>
 	                </div>
 	              </div>
 	            </div>
@@ -461,7 +625,7 @@ class body {
 	            <div class='col-md-6'>
 	              <div class='form-group'>
 	                <div class='col-md-11'>
-	                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='nome de Usuário do dominio empresarial' type='text'>
+	                  <input class='form-control' name='senha_email_funcionario'  style="width:410px"   placeholder='Senha do E-mail' type='text'>
 	                </div>
 	              </div>
 	            </div>
@@ -471,7 +635,7 @@ class body {
 	            <div class='col-md-6'>
 	              <div class='form-group'>
 	                <div class='col-md-11'>
-	                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='Qual nome do usuário do Skype' type='text'>
+	                  <input class='form-control' name='nome_skype_funcionario'  style="width:410px"   placeholder='Qual nome do usuário do Skype?' type='text'>
 	                </div>
 	              </div>
 	            </div>
@@ -481,7 +645,7 @@ class body {
 	            <div class='col-md-6'>
 	              <div class='form-group'>
 	                <div class='col-md-11'>
-	                  <input class='form-control' id='id_fornecedor'  style="width:410px"   placeholder='Senha do Skype' type='text'>
+	                  <input class='form-control' name='senha_skype_funcionario'  style="width:410px"   placeholder='Senha do Skype' type='text'>
 	                </div>
 	              </div>
 	            </div>
@@ -492,12 +656,13 @@ class body {
 	          <div class='form-group'>
 	            <label class='control-label col-md-2 col-md-offset-2' for='id_comments'>Informações do Usuário </label>
 	            <div class='col-md-6'>
-	              <textarea class='form-control' id='id_comments' placeholder='Comentários do Funcionário' rows='3'></textarea>
+	              <textarea class='form-control' name='info_funcionario' placeholder='Comentários do Funcionário' rows='3'></textarea>
 	            </div>
 	          </div>
 	          <div class='form-group'>
 	            <div class='col-md-offset-4 col-md-3'>
 	              <button class='btn-lg btn-primary' type='submit'>Cadastrar Funcionário</button>
+	              <input type="hidden">
 	            </div>
 	            <div class='col-md-3'>
 	              <button class='btn-lg btn-danger' style='float:right' type='submit'>Cancelar cadastro</button>
@@ -684,16 +849,16 @@ class body {
 
 						$sql =  'INSERT
 								INTO
-								  `fornecedores`(								    
-								    `nome_fornecedor`,
-								    `cnpj_fornecedor`,
-								    `rua_fornecedor`,
-								    `bairro_fornecedor`,
-								    `cidade_fornecedor`,
-								    `telefone_fornecedor`,
-								    `razao_social`,
-								    `comentario_fornecedor`,
-								    `empresa_fornecedores`
+								  fornecedores(								    
+								    nome_fornecedor,
+								    cnpj_fornecedor,
+								    rua_fornecedor,
+								    bairro_fornecedor,
+								    cidade_fornecedor,
+								    telefone_fornecedor,
+								    razao_social,
+								    comentario_fornecedor,
+								    empresa_fornecedores
 
 								  )
 								VALUES(
