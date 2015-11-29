@@ -1160,7 +1160,6 @@ class body extends Db{
 
 
 
-
 		if ($_POST) {
 		 
 			foreach ($_POST as $key => $value) {
