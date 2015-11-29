@@ -1,7 +1,7 @@
 
 
 <?php
-		$link = mysqli_connect('mumazul.alexjonas.com.br', 'server', '', 'mumazul');
+		$link = mysqli_connect('www.mumazul.com.br', 'server', '', 'mumazul');
 
 		if (!$link) {
 		    echo 'Error: Unable to connect to MySQL.' . PHP_EOL;

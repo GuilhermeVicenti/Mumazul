@@ -50,6 +50,13 @@ if (isset($_GET['pesqfunc'])) {
 
 
 }
+if (isset($_GET['cadastroconj'])) {
+
+	$BODY->cadastroconj(); 
+
+
+
+}
 
 
 
