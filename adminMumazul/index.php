@@ -43,6 +43,15 @@ if(isset($_GET['cadastrofornec'])) {
 
 }
 
+if (isset($_GET['pesqfunc'])) {
+
+	$BODY->pesqfunc(); 
+
+
+
+}
+
+
 
 
 

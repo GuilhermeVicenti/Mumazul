@@ -16,6 +16,8 @@ class body {
 				 
 		<html>
 		  <head>
+		  	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+			<link rel="stylesheet" type="text/css" href="component.css" />
 		    <meta charset="utf-8">
 		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		    <title>Mumazul Admin</title>
@@ -134,7 +136,7 @@ class body {
 		              <!-- campo de usuário que está logado -->
 		              <li class="dropdown user user-menu">
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		                  <img src="../img/favicon.png" class="user-image" alt="User Image">
+		                  <img src="../img/user.png" class="user-image" alt="User Image">
 		                  <span class="hidden-xs"><?php  echo $_SESSION['empresa'] ?> </span>
 		                </a>
 		                <ul class="dropdown-menu">
@@ -142,7 +144,7 @@ class body {
 		                  <li class="user-header">
 		                    
 		                    <p>
-		                     <?php  echo $_SESSION['empresa'] ?>
+		                     Usuário: <b><?php  echo $_SESSION['empresa'] ?></b> 
 		                     
 		                    </p>
 		                  </li>
@@ -152,7 +154,8 @@ class body {
 		                  <li class="user-footer">
 		                    <div class="pull-right">
 		                      <!--  DESLOGAR USUÁRIO -->
-		                      <a href="../login.php?logout=logout" class="btn btn-default btn-flat"> Deslogar </a>
+		                      <a href="../login.php?logout=logout" class="btn btn-default btn-flat"> Deslogar  <?php  echo $_SESSION['empresa'] ?> </a>
+
 		                    </div>
 		                  </li>
 		                </ul>
@@ -169,11 +172,12 @@ class body {
 		          <!-- Sidebar user panel -->
 		          <div class="user-panel">
 		            <div class="pull-left image">
-		              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+		              <img src="../img/USERs.jpg" class="img-circle" alt="User Image">
 		            </div>
 		            <div class="pull-left info">
 		              <!-- COLOCAR NOME DO USUÁRIO -->
-		              <p> <?php  echo $_SESSION['empresa'] ?> </p>
+		          <br>
+		              <b><?php  echo $_SESSION['empresa'] ?> </b>
 		            </div>
 		          </div>
 		          <!-- search form -->
@@ -209,7 +213,26 @@ class body {
 		              
 		               
 		              </ul>
-		            </li>           
+		            </li>  
+		            <li class="treeview">
+		              <a href="#">
+		               <i class="fa fa-fw fa-file-text-o"></i>
+		                <span>Pesquisar</span>
+		                 <i class="fa fa-angle-left pull-right"></i>
+		               
+		              </a>
+		              <ul class="treeview-menu">
+		                <li><a href="?pesqfunc"><i class="fa fa-circle-o"></i> Funcionários </a></li>
+		                <li><a href="?pesqconju"><i class="fa fa-circle-o"></i> Conjuntos </a></li>
+		                <li><a href="?pesqequip"><i class="fa fa-circle-o"></i> Equipamentos</a></li>
+		                <li><a href="?pesqset"><i class="fa fa-circle-o"></i> Setores</a></li>
+		                <li><a href="?pesqcham"><i class="fa fa-circle-o"></i> Chamados </a></li>
+		              </ul>
+		            </li>
+
+
+
+
 		            <li class="treeview">
 		              <a href="#">
 		               <i class="fa fa-fw fa-file-text-o"></i>
@@ -398,19 +421,21 @@ class body {
 						
 						$erro .= ' A senha do usuário do DOMINIO está vazia!  \n';
 
-
+					}
 					if ($_POST['data_contratacao'] == '' ) {
 						
 						$erro .= 'Coloque a DATA da contratação!  \n';
+					}
 
 					if ($_POST['nome_skype_funcionario'] == '' ) {
 						
 						$erro .= ' NOME do Usuário do SKYPE está VAZIO!  \n';
-
+					}
 
 					if ($_POST['senha_skype_funcionario'] == '' ) {
 						
 						$erro .= ' Senha do USUARIO do  SKYPE está VAZIA!  \n';
+					}
 
 
 
@@ -456,42 +481,13 @@ class body {
 								 "'.$_POST['senha_user_dominio'].'",
 								  "'.$_POST['data_contratacao'].'",
 								  "'.$_POST['nome_skype_funcionario'].'",
-								  "'.$_POST['senha_skype_funcionario'].'", '
-								)
+								  '.$_POST['senha_skype_funcionario'].')';
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 				
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			} 
+			mysqli_query($link, $sql);
 
 			?>
 
@@ -880,11 +876,12 @@ class body {
 
 
 
-			}
+			
+		?>	
 
 
 
-			?>
+			
 
 			
 
@@ -992,13 +989,74 @@ class body {
               <button class='btn-lg btn-danger' style='float:right' type='submit'>Cancelar Cadastro</button>
             </div>
           
+</div>
+		<?php 
+			 
+		}}}
 
-			<?php 
-
+		function pesqfunc(){
 			
+
+			?>
+			<div class='panel-body'>
+			<div class="sticky-wrap">
+				<table class="sticky-enabled" style="margin: 0px; width: 100%;">
+					<thead>
+						<tr>
+							<th>Nome do Equipamento</th>
+							<th>Data de Compra</th>
+							<th>Preço do Equipamento</th>
+							<th>Nome do fornecedor</th>
+							<th>Nome do Conjunto</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td class="user-name">gary coleman</td><td class="user-email">gary.coleman21@example.com</td><td class="user-phone">(398)-332-5385</td><td class="user-mobile">(888)-677-3719</td></tr>
+						<tr><td class="user-name">rose parker</td><td class="user-email">rose.parker16@example.com</td><td class="user-phone">(293)-873-2247</td><td class="user-mobile">(216)-889-4933</td></tr>
+						<tr><td class="user-name">chloe nelson</td><td class="user-email">chloe.nelson18@example.com</td><td class="user-phone">(957)-213-3499</td><td class="user-mobile">(207)-516-4474</td></tr>
+						<tr><td class="user-name">eric bell</td><td class="user-email">eric.bell16@example.com</td><td class="user-phone">(897)-762-9782</td><td class="user-mobile">(565)-627-3002</td></tr>
+						<tr><td class="user-name">douglas hayes</td><td class="user-email">douglas.hayes92@example.com</td><td class="user-phone">(231)-391-6269</td><td class="user-mobile">(790)-838-2130</td></tr>
+						<tr><td class="user-name">cameron brown</td><td class="user-email">cameron.brown32@example.com</td><td class="user-phone">(204)-488-5204</td><td class="user-mobile">(508)-463-6811</td></tr>
+						<tr><td class="user-name">nevaeh diaz</td><td class="user-email">nevaeh.diaz99@example.com</td><td class="user-phone">(436)-578-2946</td><td class="user-mobile">(906)-412-3302</td></tr>
+						<tr><td class="user-name">kathy miller</td><td class="user-email">kathy.miller62@example.com</td><td class="user-phone">(724)-705-3555</td><td class="user-mobile">(764)-841-2531</td></tr>
+						<tr><td class="user-name">susan king</td><td class="user-email">susan.king88@example.com</td><td class="user-phone">(774)-205-7754</td><td class="user-mobile">(639)-267-9728</td></tr>
+						<tr><td class="user-name">jeffery ramirez</td><td class="user-email">jeffery.ramirez83@example.com</td><td class="user-phone">(723)-243-7706</td><td class="user-mobile">(172)-597-3422</td></tr>
+						<tr><td class="user-name">gary coleman</td><td class="user-email">gary.coleman21@example.com</td><td class="user-phone">(398)-332-5385</td><td class="user-mobile">(888)-677-3719</td></tr>
+						<tr><td class="user-name">rose parker</td><td class="user-email">rose.parker16@example.com</td><td class="user-phone">(293)-873-2247</td><td class="user-mobile">(216)-889-4933</td></tr>
+						<tr><td class="user-name">chloe nelson</td><td class="user-email">chloe.nelson18@example.com</td><td class="user-phone">(957)-213-3499</td><td class="user-mobile">(207)-516-4474</td></tr>
+						<tr><td class="user-name">eric bell</td><td class="user-email">eric.bell16@example.com</td><td class="user-phone">(897)-762-9782</td><td class="user-mobile">(565)-627-3002</td></tr>
+						<tr><td class="user-name">douglas hayes</td><td class="user-email">douglas.hayes92@example.com</td><td class="user-phone">(231)-391-6269</td><td class="user-mobile">(790)-838-2130</td></tr>
+						<tr><td class="user-name">cameron brown</td><td class="user-email">cameron.brown32@example.com</td><td class="user-phone">(204)-488-5204</td><td class="user-mobile">(508)-463-6811</td></tr>
+						<tr><td class="user-name">nevaeh diaz</td><td class="user-email">nevaeh.diaz99@example.com</td><td class="user-phone">(436)-578-2946</td><td class="user-mobile">(906)-412-3302</td></tr>
+						<tr><td class="user-name">kathy miller</td><td class="user-email">kathy.miller62@example.com</td><td class="user-phone">(724)-705-3555</td><td class="user-mobile">(764)-841-2531</td></tr>
+						<tr><td class="user-name">susan king</td><td class="user-email">susan.king88@example.com</td><td class="user-phone">(774)-205-7754</td><td class="user-mobile">(639)-267-9728</td></tr>
+						<tr><td class="user-name">jeffery ramirez</td><td class="user-email">jeffery.ramirez83@example.com</td><td class="user-phone">(723)-243-7706</td><td class="user-mobile">(172)-597-3422</td></tr>
+						<tr><td class="user-name">gary coleman</td><td class="user-email">gary.coleman21@example.com</td><td class="user-phone">(398)-332-5385</td><td class="user-mobile">(888)-677-3719</td></tr>
+						<tr><td class="user-name">rose parker</td><td class="user-email">rose.parker16@example.com</td><td class="user-phone">(293)-873-2247</td><td class="user-mobile">(216)-889-4933</td></tr>
+						<tr><td class="user-name">chloe nelson</td><td class="user-email">chloe.nelson18@example.com</td><td class="user-phone">(957)-213-3499</td><td class="user-mobile">(207)-516-4474</td></tr>
+						<tr><td class="user-name">eric bell</td><td class="user-email">eric.bell16@example.com</td><td class="user-phone">(897)-762-9782</td><td class="user-mobile">(565)-627-3002</td></tr>
+						<tr><td class="user-name">douglas hayes</td><td class="user-email">douglas.hayes92@example.com</td><td class="user-phone">(231)-391-6269</td><td class="user-mobile">(790)-838-2130</td></tr>
+						<tr><td class="user-name">cameron brown</td><td class="user-email">cameron.brown32@example.com</td><td class="user-phone">(204)-488-5204</td><td class="user-mobile">(508)-463-6811</td></tr>
+						<tr><td class="user-name">nevaeh diaz</td><td class="user-email">nevaeh.diaz99@example.com</td><td class="user-phone">(436)-578-2946</td><td class="user-mobile">(906)-412-3302</td></tr>
+						<tr><td class="user-name">kathy miller</td><td class="user-email">kathy.miller62@example.com</td><td class="user-phone">(724)-705-3555</td><td class="user-mobile">(764)-841-2531</td></tr>
+						<tr><td class="user-name">susan king</td><td class="user-email">susan.king88@example.com</td><td class="user-phone">(774)-205-7754</td><td class="user-mobile">(639)-267-9728</td></tr>
+						<tr><td class="user-name">jeffery ramirez</td><td class="user-email">jeffery.ramirez83@example.com</td><td class="user-phone">(723)-243-7706</td><td class="user-mobile">(172)-597-3422</td></tr>
+					</tbody>
+				</table><table class="sticky-thead" style="width: 882px; opacity: 0; top: 0px;"><thead>
+						<tr>
+							<th style="width: 186px;">Name</th>
+							<th style="width: 323px;">Email</th>
+							<th style="width: 186px;">Phone</th>
+							<th style="width: 187px;">Mobile</th>
+						</tr>
+					</thead>
+				</table>
+
+			</div>
+		</div>
+			<?php 
 
 		}
 
-
-}
- ?>
+			 ?>

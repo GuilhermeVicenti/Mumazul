@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mumazul</title>
+    <title>O Mumazul</title>
     <link rel="shortcut icon" href="img/favicon.png" />
     <link href='http://fonts.googleapis.com/css?family=Hind:400,300,600,500,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -29,36 +29,34 @@
     <div class="top">
         <div class="row">
             <div class="col-sm-3">
+                <center>
                 <div class="logo">
-                    <a href="index.php"><img src="img/logomarca.png" alt=""><b>O Mumazul</b>
+                    <a href="index.php"><center><img src="img/logomarca.png" alt="" style=" width:1000px"></center>
+
                     </a>
                 </div>
+                </center>
             </div>
+            <br>
+           
             <div class="col-sm-9">
 
                 <nav id="desktop-menu">
                     <ul class="sf-menu" id="navigation">
                         
-                        <li><a href="#">Sobre Nós</a>
+                        
+                        </li><li><a href="#">Sobre Nós</a>
                             <ul>
                                 
                                 <li><a href="sobrenos1.html">O que fazemos?</a>
-								</li>
+                                </li>
                                 <li><a href="sobrenos2.html">Por que fazemos?</a>
                                 </li>
-								 <li><a href="sobrenos3.html">Aonde estamos?</a>
+                                 <li><a href="sobrenos3.html">Aonde estamos?</a>
                                 </li>
                             </ul>
-                        </li>
                        
-                        <li><a href="#">Nossos Serviços</a>
-                            <ul>
-                                <li><a href="servicos1.html">Empresas</a>
-                                </li>
-                                <li><a href="servicos2.html">Escolas</a>
-                                </li>
-                            </ul>
-                        </li>
+                        
                         <li class="current"><a href="login.php">Login</a>
                             
                                 </li>
@@ -69,7 +67,7 @@
                 </nav>
             </div>
         </div>
-    </div>
+    <br> <br><br>
     <!-- End of Top Bar-->
 
     <!-- Slider -->
