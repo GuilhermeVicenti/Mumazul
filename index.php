@@ -268,12 +268,6 @@
     <!-- Término da tabela de planos do MUMA -->
 
 
-
-   
-
-   
-
-
     <!--  Footer -->
     <div class="social">
         <div class="row">
@@ -285,7 +279,7 @@
                     <li><a href="HTTP://WWW.BANDAETER.COM.BR" title="twitter" target="_blank"><i class="twitter"><img src="twitter.png" height="18" width="15"> &nbsp Twitter</i></a>
                     </li>
                     
-                    <li><a href="http://alexdb.ddns.net/thor/" title="github" target="_blank"><i class="conhecathor"> CONHEÇA O THOR</i></a>
+                    <li><a href="http://thor.alexjonas.com.br" title="github" target="_blank"><i class="conhecathor"> CONHEÇA O THOR</i></a>
                     </li>
                 </ul>
             </div>
